@@ -7,7 +7,8 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Number Game Minimax Visualizer",
-
+  description: "Visualize and play the number game with minimax algorithm",
+    generator: 'v0.dev'
 }
 
 export default function RootLayout({

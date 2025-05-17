@@ -7,7 +7,7 @@ import { AppHeader } from "@/components/app-header"
 
 export default function Home() {
   return (
-    <ThemeProvider defaultTheme="dark" storageKey="number-game-theme">
+    <ThemeProvider defaultTheme="blue" storageKey="number-game-theme">
       <main className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white">
         <AppHeader />
         <div className="container mx-auto px-4 py-4">
@@ -34,6 +34,14 @@ export default function Home() {
             </TabsContent>
           </Tabs>
         </div>
+        <footer className="w-full bg-blue-900/80 border-t border-blue-800 py-3 text-center text-blue-100">
+          <div className="container mx-auto px-4">
+            <p className="text-sm">
+              Developed by <span className="font-bold">Kadache Ahmed Rami</span> | Group 4
+            </p>
+            <p className="text-xs text-blue-300 mt-1">Assignment for AI Course | ESTIN School</p>
+          </div>
+        </footer>
       </main>
     </ThemeProvider>
   )

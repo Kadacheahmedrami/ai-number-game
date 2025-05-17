@@ -245,19 +245,19 @@ export function GamePlayer() {
   }, [gameHistory])
 
   return (
-    <Card className="bg-gray-800/50 border-gray-700 shadow-lg shadow-purple-900/20">
+    <Card className="bg-gray-800/50 border-gray-700 shadow-lg shadow-blue-900/20">
       <CardHeader>
-        <CardTitle className="text-2xl text-purple-300">Play Against AI</CardTitle>
+        <CardTitle className="text-2xl text-blue-300">Play Against AI</CardTitle>
         <CardDescription className="text-gray-400">Test your skills against the minimax algorithm</CardDescription>
       </CardHeader>
       <CardContent className="space-y-6">
-        <div className="bg-purple-900/20 border border-purple-800 rounded-lg p-4 mb-6">
+        <div className="bg-blue-900/20 border border-blue-800 rounded-lg p-4 mb-6">
           <div className="flex items-start gap-3">
-            <div className="bg-purple-800/50 p-2 rounded-full">
-              <Brain className="h-5 w-5 text-purple-300" />
+            <div className="bg-blue-800/50 p-2 rounded-full">
+              <Brain className="h-5 w-5 text-blue-300" />
             </div>
             <div>
-              <h3 className="font-medium text-purple-300 mb-1">How to Play</h3>
+              <h3 className="font-medium text-blue-300 mb-1">How to Play</h3>
               <p className="text-gray-300 text-sm">
                 Take turns removing numbers from either end of the sequence. The player with the highest total at the
                 end wins. Can you beat the AI using the minimax algorithm?
@@ -280,7 +280,7 @@ export function GamePlayer() {
               <Button
                 onClick={handleSequenceChange}
                 variant="secondary"
-                className="bg-purple-600 hover:bg-purple-700 text-white"
+                className="bg-blue-600 hover:bg-blue-700 text-white"
               >
                 Set
               </Button>
@@ -320,15 +320,15 @@ export function GamePlayer() {
           <div className="bg-gray-900/50 p-6 rounded-lg border border-gray-700 shadow-md">
             <div className="flex justify-between items-center mb-6">
               <div className="flex items-center gap-2">
-                <User className="h-5 w-5 text-purple-400" />
-                <h3 className="text-xl font-semibold text-purple-400">You</h3>
+                <User className="h-5 w-5 text-blue-400" />
+                <h3 className="text-xl font-semibold text-blue-400">You</h3>
               </div>
               <div className="text-3xl font-bold text-white">{humanScore}</div>
             </div>
             <div className="flex justify-between items-center mb-6">
               <div className="flex items-center gap-2">
-                <Brain className="h-5 w-5 text-pink-400" />
-                <h3 className="text-xl font-semibold text-pink-400">AI</h3>
+                <Brain className="h-5 w-5 text-cyan-400" />
+                <h3 className="text-xl font-semibold text-cyan-400">AI</h3>
               </div>
               <div className="text-3xl font-bold text-white">{aiScore}</div>
             </div>
@@ -338,13 +338,13 @@ export function GamePlayer() {
               <div className="flex items-center gap-2">
                 {currentPlayer === "human" ? (
                   <>
-                    <User className="h-5 w-5 text-purple-400" />
-                    <span className="text-lg font-medium text-purple-400">Your Turn</span>
+                    <User className="h-5 w-5 text-blue-400" />
+                    <span className="text-lg font-medium text-blue-400">Your Turn</span>
                   </>
                 ) : (
                   <>
-                    <Brain className="h-5 w-5 text-pink-400" />
-                    <span className="text-lg font-medium text-pink-400">
+                    <Brain className="h-5 w-5 text-cyan-400" />
+                    <span className="text-lg font-medium text-cyan-400">
                       {thinking ? "AI is thinking..." : "AI's Turn"}
                     </span>
                   </>
@@ -381,7 +381,7 @@ export function GamePlayer() {
               <Button
                 onClick={() => humanMove("left")}
                 disabled={currentPlayer !== "human" || gameOver || thinking}
-                className="bg-purple-600 hover:bg-purple-700 text-white flex-1"
+                className="bg-blue-600 hover:bg-blue-700 text-white flex-1"
                 size="lg"
               >
                 Take Left
@@ -389,7 +389,7 @@ export function GamePlayer() {
               <Button
                 onClick={() => humanMove("right")}
                 disabled={currentPlayer !== "human" || gameOver || thinking}
-                className="bg-purple-600 hover:bg-purple-700 text-white flex-1"
+                className="bg-blue-600 hover:bg-blue-700 text-white flex-1"
                 size="lg"
               >
                 Take Right
@@ -429,15 +429,15 @@ export function GamePlayer() {
                     className={cn(
                       "p-3 rounded-md flex justify-between items-center",
                       move.player === "human"
-                        ? "bg-purple-900/20 border border-purple-800"
-                        : "bg-pink-900/20 border border-pink-800",
+                        ? "bg-blue-900/20 border border-blue-800"
+                        : "bg-blue-900/20 border border-cyan-800",
                     )}
                   >
                     <div className="flex items-center gap-2">
                       {move.player === "human" ? (
-                        <User className="h-4 w-4 text-purple-400" />
+                        <User className="h-4 w-4 text-blue-400" />
                       ) : (
-                        <Brain className="h-4 w-4 text-pink-400" />
+                        <Brain className="h-4 w-4 text-cyan-400" />
                       )}
                       <span className="text-gray-300">
                         {move.player === "human" ? "You" : "AI"} took {move.value}
@@ -451,6 +451,12 @@ export function GamePlayer() {
               )}
             </div>
           </div>
+        </div>
+        <div className="mt-6 pt-4 border-t border-blue-800/50 text-center">
+          <p className="text-xs text-blue-300">
+            Developed by <span className="font-semibold">Kadache Ahmed Rami</span> | Group 4 | AI Assignment | ESTIN
+            School
+          </p>
         </div>
       </CardContent>
     </Card>

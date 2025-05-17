@@ -12,7 +12,7 @@ export function GameExplainer({ expanded = false }: { expanded?: boolean }) {
     <Card className="bg-gray-800/50 border-gray-700">
       <CardHeader className="cursor-pointer" onClick={() => setIsExpanded(!isExpanded)}>
         <div className="flex justify-between items-center">
-          <CardTitle className="text-2xl text-purple-300">How the Number Game Works</CardTitle>
+          <CardTitle className="text-2xl text-blue-300">How the Number Game Works</CardTitle>
           {isExpanded ? (
             <ChevronUp className="h-5 w-5 text-gray-400" />
           ) : (
@@ -31,7 +31,7 @@ export function GameExplainer({ expanded = false }: { expanded?: boolean }) {
             </TabsList>
             <TabsContent value="rules" className="mt-4 space-y-4">
               <div className="space-y-2">
-                <h3 className="text-xl font-semibold text-pink-400">Rules of the Number Game</h3>
+                <h3 className="text-xl font-semibold text-cyan-400">Rules of the Number Game</h3>
                 <ul className="list-disc pl-5 space-y-2 text-gray-300">
                   <li>A sequence of n random natural numbers is given (e.g., [1, 2, 7, 5])</li>
                   <li>Two players take turns alternately</li>
@@ -44,7 +44,7 @@ export function GameExplainer({ expanded = false }: { expanded?: boolean }) {
             </TabsContent>
             <TabsContent value="strategy" className="mt-4 space-y-4">
               <div className="space-y-2">
-                <h3 className="text-xl font-semibold text-pink-400">Optimal Strategy</h3>
+                <h3 className="text-xl font-semibold text-cyan-400">Optimal Strategy</h3>
                 <p className="text-gray-300">
                   The optimal strategy for this game is not as simple as "always take the largest number." You need to
                   consider the future consequences of your moves.
@@ -64,7 +64,7 @@ export function GameExplainer({ expanded = false }: { expanded?: boolean }) {
             </TabsContent>
             <TabsContent value="minimax" className="mt-4 space-y-4">
               <div className="space-y-2">
-                <h3 className="text-xl font-semibold text-pink-400">The Minimax Algorithm</h3>
+                <h3 className="text-xl font-semibold text-cyan-400">The Minimax Algorithm</h3>
                 <p className="text-gray-300">
                   Minimax is a decision-making algorithm used for finding the optimal move in a two-player game.
                 </p>
@@ -86,6 +86,12 @@ export function GameExplainer({ expanded = false }: { expanded?: boolean }) {
               </div>
             </TabsContent>
           </Tabs>
+          <div className="mt-6 pt-4 border-t border-blue-800/50 text-center">
+            <p className="text-xs text-blue-300">
+              Developed by <span className="font-semibold">Kadache Ahmed Rami</span> | Group 4 | AI Assignment | ESTIN
+              School
+            </p>
+          </div>
         </CardContent>
       )}
     </Card>

@@ -168,9 +168,9 @@ export function GameVisualizer() {
   const currentNode = highlightedPath[currentStep]
 
   return (
-    <Card className="bg-gray-800/50 border-gray-700 shadow-lg shadow-purple-900/20">
+    <Card className="bg-gray-800/50 border-gray-700 shadow-blue-900/20">
       <CardHeader>
-        <CardTitle className="text-2xl text-purple-300">Game Tree Visualization</CardTitle>
+        <CardTitle className="text-2xl text-blue-300">Game Tree Visualization</CardTitle>
         <CardDescription className="text-gray-400">
           See how the minimax algorithm determines the optimal strategy
         </CardDescription>
@@ -191,7 +191,7 @@ export function GameVisualizer() {
               <Button
                 onClick={handleSequenceChange}
                 variant="secondary"
-                className="bg-purple-600 hover:bg-purple-700 text-white"
+                className="bg-blue-600 hover:bg-blue-700 text-white"
               >
                 Generate
               </Button>
@@ -286,17 +286,17 @@ export function GameVisualizer() {
         {currentNode && (
           <div className="bg-gray-900/50 p-6 rounded-lg border border-gray-700">
             <div className="text-center mb-6">
-              <h3 className="text-xl font-semibold text-pink-400 mb-2">
+              <h3 className="text-xl font-semibold text-cyan-400 mb-2">
                 Step {currentStep} of {highlightedPath.length - 1}
               </h3>
               <div className="flex justify-center items-center gap-4">
                 <div className="text-center">
                   <div className="text-sm text-gray-400">Player 1</div>
-                  <div className="text-2xl font-bold text-purple-300">{currentNode.p1Score}</div>
+                  <div className="text-2xl font-bold text-blue-300">{currentNode.p1Score}</div>
                 </div>
                 <div className="text-center">
                   <div className="text-sm text-gray-400">Player 2</div>
-                  <div className="text-2xl font-bold text-pink-300">{currentNode.p2Score}</div>
+                  <div className="text-2xl font-bold text-cyan-300">{currentNode.p2Score}</div>
                 </div>
                 {currentNode.minimax !== undefined && (
                   <div className="text-center">
@@ -356,7 +356,7 @@ export function GameVisualizer() {
                     key={i}
                     className={cn(
                       "p-4 rounded-lg border",
-                      child.isOptimal ? "bg-purple-900/30 border-purple-700" : "bg-gray-800/30 border-gray-700",
+                      child.isOptimal ? "bg-blue-900/30 border-blue-700" : "bg-gray-800/30 border-gray-700",
                     )}
                   >
                     <div className="flex justify-between items-center mb-2">
@@ -366,7 +366,7 @@ export function GameVisualizer() {
                       <div
                         className={cn(
                           "px-2 py-1 rounded text-sm font-medium",
-                          child.isOptimal ? "bg-purple-700 text-white" : "bg-gray-700 text-gray-300",
+                          child.isOptimal ? "bg-blue-700 text-white" : "bg-gray-700 text-gray-300",
                         )}
                       >
                         {child.isOptimal ? "Optimal" : "Suboptimal"}
@@ -418,6 +418,12 @@ export function GameVisualizer() {
             )}
           </div>
         )}
+        <div className="mt-6 pt-4 border-t border-blue-800/50 text-center">
+          <p className="text-xs text-blue-300">
+            Developed by <span className="font-semibold">Kadache Ahmed Rami</span> | Group 4 | AI Assignment | ESTIN
+            School
+          </p>
+        </div>
       </CardContent>
     </Card>
   )
